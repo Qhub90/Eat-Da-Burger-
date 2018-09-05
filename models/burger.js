@@ -9,8 +9,11 @@ var burgers = {
           cb(res);
         }); 
       },
-      create: function(cols, vals, cb) {
-        orm.create("burgers", cols, vals, function(res) {
+      insertOne: function(cols, vals, cb) {
+        console.log("Inside the Model");
+        orm.insertOne("burgers", cols, vals, function(res) {
+          console.log("The Model", res);
+
           cb(res);
         });
       },

@@ -18,4 +18,18 @@ router.get("/", function(req, res) {
   });
 });
 
+router.post("/api/burgers", function(req, res) {
+  console.log("Post from route");
+  burgers.insertOne([
+    "burger_name"
+  ], [
+    req.body.name
+  ], function(result) {
+
+    console.log(result);
+    // Send back the ID of the new quote
+    res.json({ id: result.insertId });
+  });
+});
+
 module.exports = router
