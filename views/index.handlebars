@@ -1,3 +1,18 @@
+<h1>Burgers!</h1>
+
+<ul>
+  {{#each burgers}}
+     <li>
+  	  <p>{{this.id}} {{this.burger_name}}
+
+      <button data-planid="{{this.id}}" class="delplan">Devour!</button>
+     </p>
+  	</li>
+  {{/each}}
+</ul>
+
+
+
 <h2>Add a Burger</h2>
 <form class="create-form">
 

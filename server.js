@@ -6,13 +6,13 @@ var PORT = process.env.PORT || 8080;
 var app = express();
 
 // Sets up the Express app to handle data parsing
-// app.use(express.static("public"));
+app.use(express.static("public"));
 
 // parse application/x-www-form-urlencoded
-// app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // parse application/json
-// app.use(bodyParser.json());
+app.use(bodyParser.json());
 
 // Set Handlebars.
 var exphbs = require("express-handlebars");
