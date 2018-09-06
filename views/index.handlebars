@@ -2,16 +2,26 @@
 
 <ul>
   {{#each burgers}}
-     <li>
-  	  <p>{{this.id}} {{this.burger_name}}
+    {{#unless devoured}}
+   
+  	  <p>{{burger_name}}
 
-      <button data-id="{{this.id}}" class="devour">Devour!</button>
-     </p>
-  	</li>
-  {{/each}}
+      <button data-id="{{this.id}}" class="devour" data-devour="{{devoured}}">Devour!</button>
+      </p>
+     {{/unless}}
+  	{{/each}}
 </ul>
 
+<h2>Eaten Burgers</h2>
 
+<ul>
+  {{#each burgers}}
+    {{#if devoured}}
+  	  <p>{{burger_name}}</p>
+
+    {{/if}}
+  {{/each}}
+</ul>
 
 <h2>Add a Burger</h2>
 <form class="create-form">
